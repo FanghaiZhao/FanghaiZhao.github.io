@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-11T08:26:09.494Z</updated>
+  <updated>2018-10-20T06:51:30.109Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cvpr18-notes-multitask</title>
+    <link href="http://yoursite.com/2018/10/20/cvpr18-notes-multitask/"/>
+    <id>http://yoursite.com/2018/10/20/cvpr18-notes-multitask/</id>
+    <published>2018-10-20T06:50:38.000Z</published>
+    <updated>2018-10-20T06:51:30.109Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><p>This paper tackles the problem of simultaneous depth prediction and scene parsing. More specifically, using the same input data to predict the two tasks. </p><h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>1.Problems of traditionally direct multi-task learning:</p><ul><li>Mainly focus on the final prediction stage with cross-modal interactions or other refinement methods.</li><li>Distinct objectives for different tasks make it complicated for the model to be well optimized for both two tasks. In this way, the multi-task performance on some tasks may be even worse than optimizing the single task. </li></ul><p>2.Benefits of the newly proposed method</p><p>This paper proposes to learn intermediate auxiliary tasks as multi-modal inputs. </p><ul><li>It is well known that multi-modal data improves the performance of deep predictions. </li><li>The network could also learn to predict other related information as multi-modal inputs, such as contours and surface normals.</li><li>How to effectively exploit the multi-modal data to benefit the final predictions is crucially important. Current deep multi-task learning models assume only the single-modal data. </li></ul><p>3.Graphical illustration<br><a href="https://googledrive.com/host/1ex6LuH2IIAUQ8Do-pMx9Ughn-qclOIV0" target="_blank" rel="noopener">Pic</a></p><h2 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h2><p><a href="https://googledrive.com/host/1OXS2GSriIiw7X3VVcRMHyl9Qn4jHl16w" target="_blank" rel="noopener">Pic</a></p><h2 id="Techniques"><a href="#Techniques" class="headerlink" title="Techniques"></a>Techniques</h2><p>1.Multi-task learning</p><p>In contrast to the traditional multi-task learning, this paper proposes a new means, which predicts intermediate auxiliary tasks and utilize the multi-task predictions to refine the final predictions. This will help the model learn better feature representations.</p><p>2.Multi-modal distillation</p><p>Three multi-modal distillation modules are proposed to incorporate information from different predictions. It seems the multi-modal distillation involves in multiple source information fusion and how to maximally exploit information from various sources to improve the final result. </p><h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><p>1.Network Optimization VS Network Training</p><p>Usually the topic of ‘network optimization’ follows after the main method and presents in the last paragraphs of the ‘Method’ section. Its content is usually the illustration of the loss functions to train the whole model. It seems that if the whole model is feed-forward, then you can say ‘end-to-end network optimization.’</p><p>The topic of ‘network training’ seems usually appear in the first paragraphs of the ‘Experiment’ section, and may be contained in the ‘Implementation details’ sub-section and is illustrated with the learning rate, training epochs, initialization, and other network parameters involved during training. While the ‘network optimization’ does not talk about the in-network parameters and just the supervision signals. When talking about ‘network training,’ you can say ‘stage-wise’ training when you want to train the first a few parts of the network and then the following so that the model could be better initialized and be better trained. </p><p>2.If you introduce a new module, it is important to verify the performance improvement is not caused due to the enlarged model capacity.</p><p>One solution for demonstration is that you can choose a different input to the module to compare with your preferred input to this module to verify the improvement is not due to the model capacity. </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Task&quot;&gt;&lt;a href=&quot;#Task&quot; class=&quot;headerlink&quot; title=&quot;Task&quot;&gt;&lt;/a&gt;Task&lt;/h2&gt;&lt;p&gt;This paper tackles the problem of simultaneous depth predictio
+      
+    
+    </summary>
+    
+      <category term="Paper Notes" scheme="http://yoursite.com/categories/Paper-Notes/"/>
+    
+    
+      <category term="multitask" scheme="http://yoursite.com/tags/multitask/"/>
+    
+      <category term="multi-modal distillation" scheme="http://yoursite.com/tags/multi-modal-distillation/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
